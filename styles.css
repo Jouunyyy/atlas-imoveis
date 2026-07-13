@@ -125,6 +125,7 @@ textarea {
 .hero {
   position: relative;
   overflow: hidden;
+  padding-bottom: 26px;
 }
 
 .hero__grid {
@@ -251,7 +252,7 @@ textarea {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 12px;
-  margin-top: -24px;
+  margin-top: 22px;
   position: relative;
   z-index: 3;
 }
