@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Atlas Imóveis — site imobiliário profissional com anúncios demonstrativos, pesquisa, destaques e contacto."
+    />
+    <title>Atlas Imóveis | Casas, apartamentos e investimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand">
+          <div class="brand__mark">A</div>
+          <div>
+            <strong>Atlas Imóveis</strong>
+            <span>Imobiliário premium</span>
+          </div>
+        </div>
+        <nav class="nav">
+          <a href="#imoveis">Imóveis</a>
+          <a href="#servicos">Serviços</a>
+          <a href="#processo">Processo</a>
+          <a href="#contacto" class="nav__cta">Contactar</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero__grid">
+          <div class="hero__copy">
+            <span class="eyebrow">Anúncios demonstrativos realistas</span>
+            <h1>Um site imobiliário com presença premium e foco em conversão.</h1>
+            <p class="lead">
+              Catálogo curado de moradias, apartamentos e imóveis de investimento,
+              com pesquisa rápida, destaques por zona e contacto direto.
+            </p>
+
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#imoveis">Ver imóveis</a>
+              <a class="btn btn--ghost" href="#contacto">Pedir avaliação</a>
+            </div>
+
+            <div class="hero__stats" aria-label="Indicadores principais">
+              <article>
+                <strong>128</strong>
+                <span>propriedades ativas</span>
+              </article>
+              <article>
+                <strong>24h</strong>
+                <span>tempo médio de resposta</span>
+              </article>
+              <article>
+                <strong>11</strong>
+                <span>zonas cobertas</span>
+              </article>
+            </div>
+          </div>
+
+          <aside class="hero__panel">
+            <div class="panel-card panel-card--accent">
+              <span>Destaque da semana</span>
+              <h2>Moradia T4 com jardim e piscina</h2>
+              <p>
+                312 m², arquitetura contemporânea, garagem dupla e vista mar.
+              </p>
+              <div class="panel-card__meta">
+                <strong>1 450 000 €</strong>
+                <span>Alto padrão</span>
+              </div>
+            </div>
+            <div class="panel-card">
+              <span>Captação rápida</span>
+              <p>
+                Integre leads, filtre imóveis por preço e destaque oportunidades
+                com maior margem.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow">Pesquisa inteligente</span>
+              <h2>Imóveis em destaque</h2>
+            </div>
+            <p>
+              Exemplos quase reais para apresentar um catálogo profissional e
+              credível.
+            </p>
+          </div>
+
+          <div class="filters" aria-label="Filtrar imóveis">
+            <label>
+              Tipo
+              <select id="filter-type">
+                <option value="all">Todos</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="moradia">Moradia</option>
+                <option value="investimento">Investimento</option>
+              </select>
+            </label>
+            <label>
+              Zona
+              <select id="filter-zone">
+                <option value="all">Todas</option>
+                <option value="lisboa">Lisboa</option>
+                <option value="porto">Porto</option>
+                <option value="algarve">Algarve</option>
+                <option value="cascais">Cascais</option>
+              </select>
+            </label>
+            <label>
+              Preço máximo
+              <select id="filter-price">
+                <option value="all">Sem limite</option>
+                <option value="350000">Até 350 000 €</option>
+                <option value="650000">Até 650 000 €</option>
+                <option value="1000000">Até 1 000 000 €</option>
+                <option value="2000000">Até 2 000 000 €</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="property-grid" class="property-grid" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="section section--muted">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow">Serviços</span>
+              <h2>Uma operação completa para venda e captação</h2>
+            </div>
+          </div>
+
+          <div class="service-grid" id="servicos">
+            <article class="service-card">
+              <h3>Avaliação de mercado</h3>
+              <p>Preço sugerido com base em zona, tipologia, área e liquidez.</p>
+            </article>
+            <article class="service-card">
+              <h3>Fotografia e anúncio</h3>
+              <p>Apresentação premium com texto orientado a performance comercial.</p>
+            </article>
+            <article class="service-card">
+              <h3>Qualificação de leads</h3>
+              <p>Contactos organizados para acelerar visitas e propostas.</p>
+            </article>
+            <article class="service-card">
+              <h3>Apoio documental</h3>
+              <p>Fluxo preparado para compra, venda e processos de mediação.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="processo">
+        <div class="container">
+          <div class="section__head">
+            <div>
+              <span class="eyebrow">Processo</span>
+              <h2>Como funciona a apresentação do imóvel</h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <article>
+              <span>01</span>
+              <h3>Captação</h3>
+              <p>Entrada estruturada do imóvel com dados, fotos e atributos-chave.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>Publicação</h3>
+              <p>Renderização do anúncio com texto forte, destaque visual e CTA.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Conversão</h3>
+              <p>Formulário, contacto direto e encaminhamento comercial rápido.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--cta" id="contacto">
+        <div class="container cta">
+          <div>
+            <span class="eyebrow">Contacto</span>
+            <h2>Pedido de informação ou avaliação</h2>
+            <p>
+              Envie uma mensagem e receba resposta com o imóvel adequado ou
+              uma proposta de valorização.
+            </p>
+          </div>
+
+          <form class="contact-form">
+            <label>
+              Nome
+              <input type="text" placeholder="O seu nome" />
+            </label>
+            <label>
+              Email
+              <input type="email" placeholder="nome@exemplo.com" />
+            </label>
+            <label>
+              Mensagem
+              <textarea rows="4" placeholder="Descreva o que procura..."></textarea>
+            </label>
+            <button type="submit" class="btn btn--primary">Enviar pedido</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <p>Atlas Imóveis — site demonstrativo com anúncios exemplificativos.</p>
+        <p>Os imóveis apresentados são fictícios e usados para fins de apresentação.</p>
+      </div>
+    </footer>
+
+    <div class="modal" id="property-modal" aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal__close" type="button" data-close-modal aria-label="Fechar">×</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </body>
+</html>
