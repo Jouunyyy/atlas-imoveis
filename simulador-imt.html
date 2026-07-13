@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CasaNorte Imobiliária | Simulador IMT</title>
+    <meta name="description" content="Simulador IMT demonstrativo." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__bar">
+        <a class="brand" href="index.html">
+          <div class="brand__logo">CASA<br />NORTE</div>
+          <div>
+            <div>20 ANOS</div>
+            <small>Imobiliária & Mediação</small>
+          </div>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Início</a>
+          <a href="imoveis.html">Imóveis</a>
+          <a href="vender.html">Vender</a>
+          <a href="credito-habitacao.html">Crédito Habitação</a>
+          <a href="simulador-imt.html" aria-current="page">Simulador IMT</a>
+          <a href="contactos.html">Contactos</a>
+          <a href="quem-somos.html">Empresa</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-hero">
+      <img src="assets/credit-hero.png" alt="Simulador IMT" />
+      <div class="page-hero__content">
+        <div>
+          <div class="eyebrow" style="color:#fff;">Simulador IMT</div>
+          <h1>Estimativa orientativa de impostos e encargos</h1>
+          <p>Ferramenta demonstrativa, criada para o site ficar completo e funcional no contexto do trabalho.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container page-grid">
+        <form id="imt-form" class="panel simulator-card simulator">
+          <label>Localização do imóvel
+            <select id="imt-location">
+              <option>Portugal Continental</option>
+              <option>Madeira</option>
+              <option>Açores</option>
+            </select>
+          </label>
+          <label>Tipo de aquisição
+            <select id="imt-purpose">
+              <option value="propria">Habitação própria e permanente</option>
+              <option value="outros">Outra aquisição</option>
+              <option value="jovem">Jovem até 35 anos</option>
+            </select>
+          </label>
+          <p class="simulator-note">Simulação demonstrativa. Não substitui consulta fiscal ou contratual.</p>
+          <label>Preço do imóvel
+            <input id="imt-price" type="number" value="300000" min="0" />
+          </label>
+          <label>Valores complementares
+            <input id="imt-extra" type="number" value="0" min="0" />
+          </label>
+          <label>Idade
+            <select id="imt-age">
+              <option value="30">Até 35 anos</option>
+              <option value="40">Mais de 35 anos</option>
+            </select>
+          </label>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;">
+            <button class="btn btn--dark" type="submit">Calcular</button>
+            <button class="btn btn--muted" type="reset">Limpar</button>
+          </div>
+        </form>
+
+        <aside class="panel simulator-card">
+          <h2 style="margin-top:0;">Resultado da simulação</h2>
+          <div class="simulator__results">
+            <div class="result-box">IMT a pagar<strong id="imt-result-imt">€0</strong></div>
+            <div class="result-box">Imposto de selo (0,8%)<strong id="imt-result-is">€0</strong></div>
+            <div class="result-box">Total a pagar<strong id="imt-result-total">€0</strong></div>
+            <div class="result-box">Taxa aplicada<strong id="imt-result-rate">0%</strong></div>
+            <div class="result-box">Dedução usada<strong id="imt-result-deduction">€0</strong></div>
+          </div>
+          <p class="simulator-note" style="margin-top:14px;">
+            Este cálculo é uma simulação ilustrativa para apresentação do website e não deve ser tratado como validação fiscal.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head section-title-center">
+          <div style="margin:0 auto;">
+            <h2>Tabelas demonstrativas</h2>
+            <p>Estrutura inspirada no exemplo, com valores ilustrativos e apresentação limpa.</p>
+          </div>
+        </div>
+
+        <div class="panel table-card" style="margin-bottom:26px;">
+          <h3 style="margin-top:0;text-align:center;">Tabela simplificada correspondente ao cálculo do IMT</h3>
+          <table class="simulator-table">
+            <thead>
+              <tr><th>Valor do imóvel</th><th>Taxa</th><th>Parcela a abater</th></tr>
+            </thead>
+            <tbody id="imt-table-standard"></tbody>
+          </table>
+        </div>
+
+        <div class="panel table-card">
+          <h3 style="margin-top:0;text-align:center;">Tabela demonstrativa para jovens com idade igual ou inferior a 35 anos</h3>
+          <table class="simulator-table">
+            <thead>
+              <tr><th>Valor do imóvel</th><th>Taxa</th><th>Parcela a abater</th></tr>
+            </thead>
+            <tbody id="imt-table-youth"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-band">
+      <div class="container newsletter-band__inner">
+        <div>
+          <div style="font-size:1.15rem;font-weight:700;">Subscrever Newsletter</div>
+          <div style="color:rgba(255,255,255,.74);margin-top:4px;">Receba novidades do mercado e do simulador.</div>
+        </div>
+        <form data-demo-form style="display:flex;gap:10px;align-items:center;">
+          <input type="email" placeholder="E-mail" />
+          <button class="btn btn--dark" type="submit" style="min-width:90px;">OK</button>
+        </form>
+        <div style="text-align:center;">
+          <div style="color:rgba(255,255,255,.72);font-size:.84rem;">Chamada para a rede fixa nacional</div>
+          <div style="font-size:1.25rem;font-weight:700;margin-top:4px;">253 220 913</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        CasaNorte Imobiliária | <a href="index.html">Início</a> | <a href="contactos.html">Contactos</a>
+      </div>
+    </footer>
+  </body>
+</html>

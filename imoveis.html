@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CasaNorte Imobiliária | Listagem de imóveis</title>
+    <meta name="description" content="Listagem de imóveis com pesquisa e filtros." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header__bar">
+        <a class="brand" href="index.html">
+          <div class="brand__logo">CASA<br />NORTE</div>
+          <div>
+            <div>20 ANOS</div>
+            <small>Imobiliária & Mediação</small>
+          </div>
+        </a>
+        <nav class="nav">
+          <a href="index.html">Início</a>
+          <a href="imoveis.html" aria-current="page">Imóveis</a>
+          <a href="vender.html">Vender</a>
+          <a href="credito-habitacao.html">Crédito Habitação</a>
+          <a href="simulador-imt.html">Simulador IMT</a>
+          <a href="contactos.html">Contactos</a>
+          <a href="quem-somos.html">Empresa</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="page-hero">
+      <img src="assets/listings-collage.png" alt="Listagem de imóveis" />
+      <div class="page-hero__content">
+        <div>
+          <div class="eyebrow" style="color:#fff;">Pesquisa de imóveis</div>
+          <h1>Catálogo de venda e arrendamento</h1>
+          <p>Filtro rápido, apresentação profissional e leitura clara dos dados principais de cada anúncio.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <form id="listing-filters" class="panel content-card">
+          <div class="filter-bar filter-bar--advanced">
+            <label>Tipo de imóvel
+              <select name="type">
+                <option value="all">Todos</option>
+                <option value="moradia">Moradia</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="investimento">Investimento</option>
+              </select>
+            </label>
+            <label>Distrito
+              <select name="district">
+                <option value="all">Todos</option>
+                <option>Braga</option>
+                <option>Porto</option>
+                <option>Terras de Bouro</option>
+              </select>
+            </label>
+            <label>Concelho
+              <select name="concelho">
+                <option value="all">Todos</option>
+                <option>Braga</option>
+                <option>Porto</option>
+                <option>Guimarães</option>
+                <option>Matosinhos</option>
+                <option>Barcelos</option>
+                <option>Vila Verde</option>
+                <option>Amares</option>
+              </select>
+            </label>
+            <label>Freguesia
+              <select name="zone">
+                <option value="all">Todas</option>
+                <option>Braga > Nogueira</option>
+                <option>Braga > São Vicente</option>
+                <option>Porto > Bonfim</option>
+                <option>Braga > São José de São Lázaro</option>
+              </select>
+            </label>
+            <label>Negócio
+              <select name="business">
+                <option value="all">Todos</option>
+                <option>Venda</option>
+                <option>Arrendamento</option>
+              </select>
+            </label>
+            <label>Estado
+              <select name="state">
+                <option value="all">Todos</option>
+                <option>Novo</option>
+                <option>Renovado</option>
+                <option>Disponível</option>
+                <option>Reservado</option>
+                <option>Usado</option>
+                <option>Para recuperar</option>
+                <option>Oportunidade</option>
+              </select>
+            </label>
+            <label>Quartos
+              <select name="rooms">
+                <option value="all">Todos</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="6">6</option>
+              </select>
+            </label>
+            <label>Referência
+              <input name="q" placeholder="Ref., zona ou palavra-chave" />
+            </label>
+            <label>Preço min.
+              <input name="minPrice" type="number" placeholder="0" />
+            </label>
+            <label>Preço max.
+              <input name="maxPrice" type="number" placeholder="1000000" />
+            </label>
+            <label>Área min.
+              <input name="minArea" type="number" placeholder="0" />
+            </label>
+            <label>Área max.
+              <input name="maxArea" type="number" placeholder="999" />
+            </label>
+            <div style="display:flex;align-items:end;">
+              <button class="btn btn--dark" type="submit" style="width:100%;">Pesquisar</button>
+            </div>
+          </div>
+        </form>
+
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:18px;margin:16px 0 18px;">
+          <div>Imóveis encontrados <strong id="listing-count">0 imóveis</strong></div>
+          <div class="chips">
+            <button class="chip is-active" type="button">Ofertas recentes</button>
+            <button class="chip" type="button">Venda</button>
+            <button class="chip" type="button">Arrendamento</button>
+            <button class="chip" type="button">Novos</button>
+          </div>
+        </div>
+
+        <div id="listings-grid" class="property-grid"></div>
+      </div>
+    </section>
+
+    <section class="newsletter-band">
+      <div class="container newsletter-band__inner">
+        <div>
+          <div style="font-size:1.15rem;font-weight:700;">Subscrever Newsletter</div>
+          <div style="color:rgba(255,255,255,.74);margin-top:4px;">Receba oportunidades e imóveis em destaque.</div>
+        </div>
+        <form data-demo-form style="display:flex;gap:10px;align-items:center;">
+          <input type="email" placeholder="E-mail" />
+          <button class="btn btn--dark" type="submit" style="min-width:90px;">OK</button>
+        </form>
+        <div style="text-align:center;">
+          <div style="color:rgba(255,255,255,.72);font-size:.84rem;">Chamada para a rede fixa nacional</div>
+          <div style="font-size:1.25rem;font-weight:700;margin-top:4px;">253 220 913</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        CasaNorte Imobiliária | <a href="index.html">Início</a> | <a href="contactos.html">Contactos</a>
+      </div>
+    </footer>
+
+    <div class="modal" id="property-modal" aria-hidden="true">
+      <div class="modal__backdrop" data-close-modal></div>
+      <div class="modal__dialog">
+        <button class="modal__close" type="button" data-close-modal aria-label="Fechar">×</button>
+        <div id="property-modal-body"></div>
+      </div>
+    </div>
+  </body>
+</html>

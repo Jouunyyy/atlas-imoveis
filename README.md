@@ -1,13 +1,24 @@
-# Atlas Imóveis
+# CasaNorte Imobiliária
 
-Site imobiliário demonstrativo, responsivo e estático, com anúncios exemplificativos quase reais, pesquisa por filtros e modal de detalhe.
+Site imobiliário multi-página, com inspiração visual no estilo do exemplo fornecido, mas com conteúdo original.
 
-## Conteúdo
+## Páginas
 
-- `index.html` — estrutura do site
-- `styles.css` — apresentação visual
-- `script.js` — filtro de imóveis e modal de detalhes
+- `index.html` — homepage
+- `imoveis.html` — listagem e filtros
+- `vender.html` — página de venda
+- `credito-habitacao.html` — crédito habitação
+- `simulador-imt.html` — simulador demonstrativo
+- `contactos.html` — contactos e formulário
+- `quem-somos.html` — página institucional
+
+## Assets gerados
+
+- `assets/hero-office.png`
+- `assets/about-office.png`
+- `assets/contact-storefront.png`
+- `assets/listings-collage.png`
 
 ## Notas
 
-Os imóveis apresentados são fictícios e servem apenas para demonstração.
+Os anúncios e os cálculos apresentados são demonstrativos e servem para apresentação do projeto.
